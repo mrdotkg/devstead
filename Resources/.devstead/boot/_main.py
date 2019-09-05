@@ -39,6 +39,6 @@ for patch in patch_list:
 print('-- Running boot scripts')
 
 for boot_script in os.listdir(boot_dir):
-    if boot_script.endswith('.py') or boot_script.endswith('.sh') :
+    if boot_script.endswith('.py') or boot_script.endswith('.sh') and boot_script != '_main.py':
         print('-- script name: ' + boot_script)
         call(f'{boot_dir}/{boot_script}'.split(), cwd=boot_dir)
