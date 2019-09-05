@@ -1,11 +1,12 @@
 #!/bin/bash
 
 PROJECTS_DIR="/home/vagrant/Projects" 
+DOT_DEVSTEAD_DIR="/home/vagrant/Projects" 
 
 groupadd -r company --gid 9009
 usermod -a -G company vagrant
-chown -R vagrant:company $PROJECTS_DIR
-chmod -R g+s $PROJECTS_DIR
+chown -R vagrant:company $PROJECTS_DIR $DOT_DEVSTEAD_DIR
+chmod -R g+s $PROJECTS_DIR $DOT_DEVSTEAD_DIR
 
 # Copy user specific configuration to local variables
 DEV_FULL_NAME=$1

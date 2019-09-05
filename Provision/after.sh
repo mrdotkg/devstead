@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# Install Docker Compose
-if ! [ -x "$(command -v docker-compose)" ]; then
+# # Install Docker Compose
+# if ! [ -x "$(command -v docker-compose)" ]; then
     
-    echo 'installing docker-composes'
-    curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 2>/dev/null
-    chmod +x /usr/local/bin/docker-compose
-    usermod -a -G docker vagrant
+#     echo 'installing docker-composes'
+#     curl -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 2>/dev/null
+#     chmod +x /usr/local/bin/docker-compose
+#     usermod -a -G docker vagrant
     
-    echo 'installing docker cleanup script'
-    cd /tmp
-    git clone https://gist.github.com/76b450a0c986e576e98b.git
-    cd 76b450a0c986e576e98b
-    mv docker-cleanup /usr/local/bin/docker-cleanup
-    chmod +x /usr/local/bin/docker-cleanup
-else
-    echo 'skipping docker-compose and docker cleanup, already installed'
-fi
+#     echo 'installing docker cleanup script'
+#     cd /tmp
+#     git clone https://gist.github.com/76b450a0c986e576e98b.git
+#     cd 76b450a0c986e576e98b
+#     mv docker-cleanup /usr/local/bin/docker-cleanup
+#     chmod +x /usr/local/bin/docker-cleanup
+# else
+#     echo 'skipping docker-compose and docker cleanup, already installed'
+# fi
 
 # Hook run.py on machine startup, to download and update Devstead on each boot.
 _encode() {

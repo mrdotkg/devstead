@@ -15,7 +15,7 @@ logs_dir    = '/home/vagrant/.devstead/logs'    # traces i)each reboot and ii)ev
 print('-- Downloading latest updates from devstead repo')
 
 call(f'git clone https://{vc_user}:{vc_pass}@github.com/measdot/devstead.git'.split(), cwd='/tmp')
-call('rsync -abviuzP devstead/Resources/.devstead/ /home/vagrant/.devstead/'.split(), cwd='/tmp')
+call('rsync -abviuzP --inplace devstead/Resources/.devstead/ /home/vagrant/.devstead/'.split(), cwd='/tmp')
 call('rm -rf devstead'.split(), cwd='/tmp')
 
 #---------------------------- II/III ---------------------------

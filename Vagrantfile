@@ -47,7 +47,7 @@ Vagrant.configure(2) do |config|
 
             #4. Install important softwares, configure box initialization and regular updates
             if File.exist? afterShPath then
-                config.vm.provision "shell", path: afterShPath,
+                config.vm.provision "shell", path: afterShPath, privileged: false,
                 name: "Install important softwares, configure box initialization and regular updates",
                 :args=>[
                     credentials['VC_USER'],
