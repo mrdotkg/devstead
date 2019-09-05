@@ -16,5 +16,5 @@ copy:
     to: /home/vagrant
 
 features:
-  - docker: true
-  - ohmyzsh: true
+  - docker: false
+  - ohmyzsh: false
