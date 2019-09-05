@@ -1,0 +1,4 @@
+_credentials.yaml
+.vagrant
+.vscode
+.DS_Store
