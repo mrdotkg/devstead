@@ -31,7 +31,7 @@ for patch in patch_list:
         else:
             # Apply the patch
             patch_cmd = f'{patch_dir}/{patch}'
-            os.chmod(patch_cmd, os.stat(patch_cmd).st_mode | stat.S_IEXEC) # existing permission+= OWNER_CAN_EXECUTE
+            call(f'chmod +x {patch_cmd}', cwd=patch_dir)
             call(f'{patch_cmd} >> {logs_dir}/patch_{patch}.log 2>&1'.split(), cwd=patch_dir)
             print(f'Patch {patch} applied.')
 
