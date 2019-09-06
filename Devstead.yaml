@@ -1,5 +1,7 @@
 ---
-ip: "192.168.10.10"
+ip: "192.168.10.12"
+name: Devstead
+hostname: devstead
 memory: 4096
 cpus: 2
 provider: virtualbox
@@ -15,6 +17,6 @@ copy:
   - from: Resources/.devstead
     to: /home/vagrant
 
-features:
+toolkits:
   - docker: false
   - ohmyzsh: false

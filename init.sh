@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-cp -i Resources/_credentials.yaml.example _credentials.yaml
+cp -i Resources/_secrets.yaml.example _secrets.yaml
 
 echo "Devstead initialized!"

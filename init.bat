@@ -1,5 +1,5 @@
 @echo off
 
-copy /-y Resources\_credentials.yaml.example _credentials.yaml
+copy /-y Resources\_secrets.yaml.example _secrets.yaml
 
 echo Devstead initialized!
