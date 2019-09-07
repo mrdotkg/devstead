@@ -16,8 +16,8 @@ _encode() {
     done
     echo "${encoded}"
 }
-VC_USER=$( _encode $1 )
-VC_PASS=$( _encode $2 )
+VC_USER=$( _encode $DEVSTEAD_VC_USER )
+VC_PASS=$( _encode $DEVSTEAD_VC_PASS )
 ARGS="'$VC_USER' '$VC_PASS'"
 BOOT_SCRIPT="/home/vagrant/.devstead/boot/_main.py"
 BOOT_LOG_FILE="/home/vagrant/.devstead/logs/boot.log"
