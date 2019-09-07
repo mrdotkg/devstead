@@ -1,16 +1,16 @@
 #! /usr/bin/python3
 
 from subprocess import call
-from subprocess import Popen
+from urllib.parse import quote
 import sys
 import os
 import stat
 
-vc_user     = os.environ['DEVSTEAD_VC_USER']    # read version control user name from env vars
-vc_pass     = os.environ['DEVSTEAD_VC_PASS']    # read password for the version control user from env vars
-boot_dir    = '/home/vagrant/.devstead/boot'    # what happens at vm boot/startup?
-patch_dir   = '/home/vagrant/.devstead/patches' # patches are minor update to the vm, applies on next boot
-logs_dir    = '/home/vagrant/.devstead/logs'    # traces i)each reboot and ii)every now and then patching of the vm
+vc_user     = os.environ['DEVSTEAD_VC_USER']        # read version control user name from env vars
+vc_pass     = quote(os.environ['DEVSTEAD_VC_PASS']) # read password for the version control user from env vars
+boot_dir    = '/home/vagrant/.devstead/boot'        # what happens at vm boot/startup?
+patch_dir   = '/home/vagrant/.devstead/patches'     # patches are minor update to the vm, applies on next boot
+logs_dir    = '/home/vagrant/.devstead/logs'        # traces i)each reboot and ii)every now and then patching of the vm
 
 #---------------------------- I/III ----------------------------
 print('-- Downloading latest updates from devstead repo')
