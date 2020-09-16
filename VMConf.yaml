@@ -1,13 +1,13 @@
 ---
+box: laravel/homestead
 ip: "192.168.10.12"
 name: Devstead
 hostname: devstead
 memory: 4096
 cpus: 2
-provider: virtualbox
 authorize: ~/.ssh/id_rsa.pub
 keys:
-  - ~/.ssh/id_rsa
+    - ~/.ssh/id_rsa
 
 folders:
   - map: ~/Projects
@@ -15,8 +15,6 @@ folders:
 
 copy:
   - from: Resources/.devstead
-    to: /home/vagrant
+    to: /home/vagrant/
 
-toolkits:
-  - docker: false
-  - ohmyzsh: false
+ansible-playbook: features/playbook.yml

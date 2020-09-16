@@ -1,0 +1,2 @@
+- name: Copy and Execute the script
+  script: postProvision.sh

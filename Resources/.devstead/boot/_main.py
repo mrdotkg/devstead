@@ -43,6 +43,8 @@ print('-- Running boot scripts')
 for boot_script in os.listdir(boot_dir):
     if boot_script.endswith('.py') or boot_script.endswith('.sh'):
         # Run all bootscripts,  avoid running the calling script again
-        if boot_script == os.path.basename(__file__): continue 
-        print('-- script name: ' + boot_script)
-        call(f'{boot_dir}/{boot_script}'.split(), cwd=boot_dir)
+        if boot_script == os.path.basename(__file__): 
+            continue
+        else:
+            print('-- script name: ' + boot_script)
+            call(f'{boot_dir}/{boot_script}'.split(), cwd=boot_dir)

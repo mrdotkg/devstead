@@ -1,0 +1,11 @@
+- hosts: all
+  become: true
+
+  roles:
+    - role: geerlingguy.docker
+
+  tasks:
+    - import_tasks: shell/main.yml
+
+  environment:
+    DEV_FULL_NAME: "K Gaurav"
