@@ -34,7 +34,10 @@ Vagrant.configure(2) do |config|
     config.vm.provision "file", source: "~/.ssh/id_rsa", destination: "~/.ssh/me"
     config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/me.pub"
     config.vm.provision "shell", inline: "cat /home/vagrant/.ssh/me.pub >> /home/vagrant/.ssh/authorized_keys"
-
+    
+    # This command when run inside guest adds github.com to known hosts
+    #config.vm.provision "shell", inline: "ssh-keyscan -H github.com >> ~/.ssh/known_hosts"
+    
     # ---- IV / VI --- Copy user files over to VM
     if vmConf.include? 'copy'
       vmConf['copy'].each do |file|
